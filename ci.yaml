@@ -37,7 +37,7 @@ steps:
     filePath: '$(Build.SourcesDirectory)/Build.ps1'
 
 - task: ms-devlabs.vsts-developer-tools-build-tasks.package-extension-build-task.PackageVSTSExtension@1
-  displayName: 'Package Extension: azuredevops-powershell-tasks'
+  displayName: 'Package Extension: AzureDevOps-PowerShell-Installer'
   inputs:
     outputPath: '$(Build.ArtifactStagingDirectory)/Build'
 
