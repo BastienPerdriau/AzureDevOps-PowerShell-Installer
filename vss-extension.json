@@ -1,10 +1,10 @@
 {
     "manifestVersion": 1,
-    "id": "azuredevops-powershell-tasks",
+    "id": "AzureDevOps-PowerShell-Installer",
     "publisher": "BastienPerdriau",
     "version": "0.1.0",
-    "name": "PowerShell Tasks",
-    "description": "Build & Release tasks to handle PowerShell",
+    "name": "PowerShell Module Installer",
+    "description": "Build & Release tasks to install PowerShell Module",
     "public": false,
     "categories": [
         "Azure Pipelines"
@@ -16,7 +16,7 @@
     ],
     "repository": {
         "type": "git",
-        "uri": "https://github.com/BastienPerdriau/azuredevops-powershell-tasks"
+        "uri": "https://github.com/BastienPerdriau/AzureDevOps-PowerShell-Installer"
     },
     "tags": [
         "powershell"
