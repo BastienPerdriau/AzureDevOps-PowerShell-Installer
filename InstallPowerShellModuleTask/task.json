@@ -1,0 +1,31 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+    "id": "49a76752-5341-457f-a170-9605a560456c",
+    "name": "InstallPowerShellModule",
+    "friendlyName": "Install PowerShell Module",
+    "description": "Installs a PowerShell Module into the Build / Release Pipeline",
+    "author": "BastienPerdriau",
+    "helpMarkDown": "Installs a PowerShell Module into the Build / Release Pipeline",
+    "category": "Azure Pipelines",
+    "version": {
+        "Major": 0,
+        "Minor": 1,
+        "Patch": 0
+    },
+    "instanceNameFormat": "Install PowerShell Module",
+    "inputs": [
+        {
+            "name": "moduleName",
+            "label": "Module Name",
+            "type": "string",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Comma separated list of PowerShell Module(s)"
+        }
+    ],
+    "execution": {
+        "PowerShell3": {
+            "target": "InstallPowerShellModuleTask.ps1"
+        }
+    }
+}
