@@ -1,0 +1,46 @@
+{
+    "manifestVersion": 1,
+    "id": "azuredevops-powershell-tasks",
+    "publisher": "Bastien Perdriau",
+    "version": "0.1.0",
+    "name": "PowerShell Tasks",
+    "description": "Build & Release tasks to handle PowerShell",
+    "public": false,
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/BastienPerdriau/azuredevops-powershell-tasks"
+    },
+    "tags": [
+        "powershell"
+    ],
+    "contributions": [
+      {
+        "id": "InstallPowerShellModuleTask",
+        "type": "ms.vss-distributed-task.task",
+        "description": "Installs a PowerShell Module in the Build / Release pipeline",
+        "targets": [
+          "ms.vss-distributed-task.tasks"
+        ],
+        "properties": {
+          "name": "InstallPowerShellModuleTask"
+        }
+      }
+    ],
+    "files": [
+      {
+        "path": "InstallPowerShellModuleTask"
+      },
+      {
+        "path":"images",
+        "addressable":true
+      }
+    ]
+}
