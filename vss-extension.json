@@ -37,10 +37,6 @@
     "files": [
       {
         "path": "InstallPowerShellModuleTask"
-      },
-      {
-        "path":"images",
-        "addressable":true
       }
     ]
 }
