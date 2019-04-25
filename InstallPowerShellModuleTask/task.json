@@ -1,6 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
-    "id": "49a76752-5341-457f-a170-9605a560456c",
+    "id": "bace0b43-a604-4b73-a5d2-f41cffb02bd5",
     "name": "InstallPowerShellModule",
     "friendlyName": "Install PowerShell Module",
     "description": "Installs a PowerShell Module into the Build / Release Pipeline",
