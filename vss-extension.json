@@ -6,6 +6,9 @@
     "name": "PowerShell Module Installer",
     "description": "Build & Release tasks to install PowerShell Module",
     "public": false,
+    "icons": {
+      "default": "images/logo.png"
+    },
     "categories": [
         "Azure Pipelines"
     ],
@@ -37,6 +40,10 @@
     "files": [
       {
         "path": "InstallPowerShellModuleTask"
+      },
+      {
+        "path":"images",
+        "addressable":true
       }
     ]
 }
