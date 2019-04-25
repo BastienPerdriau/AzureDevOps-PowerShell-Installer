@@ -103,7 +103,7 @@ steps:
    Write-Host "6"
    $putUrl = "$($projectDef.Url)$($separator)api-version=$apiVersion"
    Write-Host "7"
-   Write-Verbose "Updating Patch Version with URL: $putUrl"
+   Write-Host "Updating Patch Version with URL: $putUrl"
    Write-Host "8"
    Invoke-RestMethod -Method Put -Uri $putUrl -Headers $header -ContentType "application/json" -Body ([System.Text.Encoding]::UTF8.GetBytes($projectDefJson))  | Out-Null
    Write-Host "9"
