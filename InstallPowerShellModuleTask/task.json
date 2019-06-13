@@ -20,7 +20,7 @@
             "type": "string",
             "defaultValue": "",
             "required": true,
-            "helpMarkDown": "Comma separated list of PowerShell Module(s)"
+            "helpMarkDown": "Semi colon separated list of PowerShell Module(s)"
         }
     ],
     "execution": {
