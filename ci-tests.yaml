@@ -3,111 +3,120 @@ resources:
   - repository: self
     type: github
 
-jobs:
-- job: TestOneModule
-  displayName: TestOneModule
-  pool: Hosted VS2017
-  dependsOn: 
-  steps:
-  - powershell: |
-     Get-InstalledModule
-    displayName: 'Get-InstalledModule Before'
+variables:
+  ExtensionName: AzureDevOps-Variables-Tools
 
-  - task: BastienPerdriau.AzureDevOps-PowerShell-Installer.InstallPowerShellModuleTask.InstallPowerShellModule@0
-    displayName: 'Install PowerShell Module'
-    inputs:
-      moduleName: AzureADPreview
+name: $(ExtensionName)-Tests
 
-  - powershell: |
-     Get-InstalledModule
-    displayName: 'Get-InstalledModule After'
+trigger: none
 
-- job: TestTwoModules
-  displayName: TestTwoModules
-  pool: Hosted VS2017
-  dependsOn: 
-  steps:
-  - powershell: |
-     Get-InstalledModule
-    displayName: 'Get-InstalledModule Before'
+stages:
+- stage: Tests
+  jobs:
+  - job: TestOneModule
+    displayName: TestOneModule
+    pool: Hosted VS2017
+    dependsOn: 
+    steps:
+    - powershell: |
+       Get-InstalledModule
+      displayName: 'Get-InstalledModule Before'
 
-  - task: BastienPerdriau.AzureDevOps-PowerShell-Installer.InstallPowerShellModuleTask.InstallPowerShellModule@0
-    displayName: 'Install PowerShell Module'
-    inputs:
-      moduleName: AzureADPreview;SharePointPnPPowerShellOnline
+    - task: BastienPerdriau.AzureDevOps-PowerShell-Installer.InstallPowerShellModuleTask.InstallPowerShellModule@0
+      displayName: 'Install PowerShell Module'
+      inputs:
+        moduleName: AzureADPreview
 
-  - powershell: |
-     Get-InstalledModule
-    displayName: 'Get-InstalledModule After'
+    - powershell: |
+       Get-InstalledModule
+      displayName: 'Get-InstalledModule After'
 
-- job: TestOneModuleFake
-  displayName: TestOneModuleFake
-  pool: Hosted VS2017
-  dependsOn: 
-  steps:
-  - powershell: |
-     Get-InstalledModule
-    displayName: 'Get-InstalledModule Before'
+  - job: TestTwoModules
+    displayName: TestTwoModules
+    pool: Hosted VS2017
+    dependsOn: 
+    steps:
+    - powershell: |
+       Get-InstalledModule
+      displayName: 'Get-InstalledModule Before'
 
-  - task: BastienPerdriau.AzureDevOps-PowerShell-Installer.InstallPowerShellModuleTask.InstallPowerShellModule@0
-    displayName: 'Install PowerShell Module'
-    inputs:
-      moduleName: FakeModule
+    - task: BastienPerdriau.AzureDevOps-PowerShell-Installer.InstallPowerShellModuleTask.InstallPowerShellModule@0
+      displayName: 'Install PowerShell Module'
+      inputs:
+        moduleName: AzureADPreview;SharePointPnPPowerShellOnline
 
-  - powershell: |
-     Get-InstalledModule
-    displayName: 'Get-InstalledModule After'
+    - powershell: |
+       Get-InstalledModule
+      displayName: 'Get-InstalledModule After'
 
-- job: TestTwoModulesFake
-  displayName: TestTwoModulesFake
-  pool: Hosted VS2017
-  dependsOn: 
-  steps:
-  - powershell: |
-     Get-InstalledModule
-    displayName: 'Get-InstalledModule Before'
+  - job: TestOneModuleFake
+    displayName: TestOneModuleFake
+    pool: Hosted VS2017
+    dependsOn: 
+    steps:
+    - powershell: |
+       Get-InstalledModule
+      displayName: 'Get-InstalledModule Before'
 
-  - task: BastienPerdriau.AzureDevOps-PowerShell-Installer.InstallPowerShellModuleTask.InstallPowerShellModule@0
-    displayName: 'Install PowerShell Module'
-    inputs:
-      moduleName: FakeModule1;FakeModule2
+    - task: BastienPerdriau.AzureDevOps-PowerShell-Installer.InstallPowerShellModuleTask.InstallPowerShellModule@0
+      displayName: 'Install PowerShell Module'
+      inputs:
+        moduleName: FakeModule
 
-  - powershell: |
-     Get-InstalledModule
-    displayName: 'Get-InstalledModule After'
+    - powershell: |
+       Get-InstalledModule
+      displayName: 'Get-InstalledModule After'
 
-- job: TestTwoModulesFirstFake
-  displayName: TestTwoModulesFirstFake
-  pool: Hosted VS2017
-  dependsOn: 
-  steps:
-  - powershell: |
-     Get-InstalledModule
-    displayName: 'Get-InstalledModule Before'
+  - job: TestTwoModulesFake
+    displayName: TestTwoModulesFake
+    pool: Hosted VS2017
+    dependsOn: 
+    steps:
+    - powershell: |
+       Get-InstalledModule
+      displayName: 'Get-InstalledModule Before'
 
-  - task: BastienPerdriau.AzureDevOps-PowerShell-Installer.InstallPowerShellModuleTask.InstallPowerShellModule@0
-    displayName: 'Install PowerShell Module'
-    inputs:
-      moduleName: FakeModule;AzureADPreview
+    - task: BastienPerdriau.AzureDevOps-PowerShell-Installer.InstallPowerShellModuleTask.InstallPowerShellModule@0
+      displayName: 'Install PowerShell Module'
+      inputs:
+        moduleName: FakeModule1;FakeModule2
 
-  - powershell: |
-     Get-InstalledModule
-    displayName: 'Get-InstalledModule After'
+    - powershell: |
+       Get-InstalledModule
+      displayName: 'Get-InstalledModule After'
 
-- job: TestTwoModulesSecondFake
-  displayName: TestTwoModulesSecondFake
-  pool: Hosted VS2017
-  dependsOn: 
-  steps:
-  - powershell: |
-     Get-InstalledModule
-    displayName: 'Get-InstalledModule Before'
+  - job: TestTwoModulesFirstFake
+    displayName: TestTwoModulesFirstFake
+    pool: Hosted VS2017
+    dependsOn: 
+    steps:
+    - powershell: |
+       Get-InstalledModule
+      displayName: 'Get-InstalledModule Before'
 
-  - task: BastienPerdriau.AzureDevOps-PowerShell-Installer.InstallPowerShellModuleTask.InstallPowerShellModule@0
-    displayName: 'Install PowerShell Module'
-    inputs:
-      moduleName: AzureADPreview;FakeModule
+    - task: BastienPerdriau.AzureDevOps-PowerShell-Installer.InstallPowerShellModuleTask.InstallPowerShellModule@0
+      displayName: 'Install PowerShell Module'
+      inputs:
+        moduleName: FakeModule;AzureADPreview
 
-  - powershell: |
-     Get-InstalledModule
-    displayName: 'Get-InstalledModule After'
+    - powershell: |
+       Get-InstalledModule
+      displayName: 'Get-InstalledModule After'
+
+  - job: TestTwoModulesSecondFake
+    displayName: TestTwoModulesSecondFake
+    pool: Hosted VS2017
+    dependsOn: 
+    steps:
+    - powershell: |
+       Get-InstalledModule
+      displayName: 'Get-InstalledModule Before'
+
+    - task: BastienPerdriau.AzureDevOps-PowerShell-Installer.InstallPowerShellModuleTask.InstallPowerShellModule@0
+      displayName: 'Install PowerShell Module'
+      inputs:
+        moduleName: AzureADPreview;FakeModule
+
+    - powershell: |
+       Get-InstalledModule
+      displayName: 'Get-InstalledModule After'
