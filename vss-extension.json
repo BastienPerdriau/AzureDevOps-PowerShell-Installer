@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "AzureDevOps-PowerShell-Installer",
     "publisher": "BastienPerdriau",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "name": "PowerShell Module Installer",
     "description": "Build & Release tasks to install PowerShell Module",
     "public": false,
